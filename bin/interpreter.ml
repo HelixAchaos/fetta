@@ -1,6 +1,6 @@
 type break_or_continue_or_return = 
-| Break of Ast.id option
-| Continue of Ast.id option
+| Break of Ast.label option
+| Continue of Ast.label option
 | Return of Types.obj
 
 type stmt_val = break_or_continue_or_return option
