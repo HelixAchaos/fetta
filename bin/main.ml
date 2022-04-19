@@ -11,7 +11,7 @@ let read_whole_file filename =
 
 
 let _ =
-  print_string (Dumper.dump_f (parse (read_whole_file "bin/test.owo")))
+  print_endline (Dumper.dump_f (parse (read_whole_file "bin/test.owo")))
 
 (* let _ =
   let globals: Interpreter.state = Hashtbl.create 1021 in

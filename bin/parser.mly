@@ -53,7 +53,7 @@ statements:
 statement:
     // | i=if_stmt                                                             { i }
     // | w=while_stmt                                                          { w }
-    // | for_stmt                                                           {  }
+    // | for_stmt                                                              {  }
     // | f=func_stmt                                                           { f }
     | s=simpl_stmt; SEMICOLON                                               { s }
 ;
@@ -65,7 +65,7 @@ simpl_stmt:
     // | c=continue_stmt                                                       { c }
     // | r=return_stmt                                                         { r }
     | a=assignment                                                          { a }
-    | e=expr                                                                { Expr(e, $loc) }
+    | e=expr                                                                { Expr(e, ($symbolstartpos, $endpos)) }
     | p=print_stmt                                                          { p }
 ;
 print_stmt:
