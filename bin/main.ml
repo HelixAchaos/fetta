@@ -9,11 +9,13 @@ let read_whole_file filename =
   close_in ch;
   s
 
+let typecheck (ast: Ast.file) : Typedast.file = 
+  Typechecker.typecheck_file ast
 
-let _ =
-  print_endline (Dumper.dump_f (parse (read_whole_file "bin/test.owo")))
+(* let _ =
+  print_endline (Dumper.dump_f (parse (read_whole_file "bin/test.owo"))) *)
 
 (* let _ =
   let globals: Interpreter.state = Hashtbl.create 1021 in
     let scope: Interpreter.state list = [globals] in
-      Interpreter.exec_f scope (parse (read_whole_file "bin/test.owo")) *)
+    (* Interpreter.exec_f *) typecheck scope (parse (read_whole_file "bin/test.owo")) *)

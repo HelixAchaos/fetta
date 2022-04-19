@@ -44,10 +44,3 @@ let type_of_string (s: string) : typ = match s with
 | "null" -> TNull
 | "any" -> TAny
 | _ -> Stdlib.failwith ("Invalid type name " ^ s)
-
-let type_of_ast_type (t: Ast.typ) : typ = match t with
-| Ast.TBool -> TBool
-|	Ast.TInt -> TInt
-(* | TFun of typ list * typ *)
-| Ast.TAny -> TAny
-| Ast.TNull -> TNull
