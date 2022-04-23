@@ -1,3 +1,6 @@
+
+
+
 (* Nothing to type here *)
 let typecheck_typ (_node: Ast.typ) : Typedast.typ = match _node with
 | Ast.TBool(text_pos) -> Typedast.TBool(text_pos)
